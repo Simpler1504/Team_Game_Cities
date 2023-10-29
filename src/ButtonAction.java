@@ -23,7 +23,7 @@ public class ButtonAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String city = textField.getText().trim().toLowerCase();
         if(!check.isValid(city)){
-            JOptionPane.showMessageDialog(null, "Слово включає не валідні символи");
+            JOptionPane.showMessageDialog(null, "Слово включає не валідні символи або поле пусте");
             return;
         }
         if(check.isGiveUp(city)){
