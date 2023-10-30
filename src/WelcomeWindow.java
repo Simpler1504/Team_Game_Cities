@@ -8,7 +8,8 @@ public class WelcomeWindow extends JFrame {
     private  JFrame jFrame = new JFrame("Вітаємо!");
     public WelcomeWindow() {
         Image image = Toolkit.getDefaultToolkit().getImage("D:\\IdeaProjects\\Game_Cities\\images\\icon.png");
-        jFrame.setBounds(764,448,400,100);
+        jFrame.setSize(400,100);
+        jFrame.setLocationRelativeTo(null);
         label.setBounds(20,20,250,30);
         button.setBounds(250,20,100,30);
         jFrame.setIconImage(image);
