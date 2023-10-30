@@ -7,7 +7,7 @@ public class WelcomeWindow extends JFrame {
     private JButton button = new JButton("Почати");
     private  JFrame jFrame = new JFrame("Вітаємо!");
     public WelcomeWindow() {
-        Image image = Toolkit.getDefaultToolkit().getImage("D:\\IdeaProjects\\Game_Cities\\images\\icon.png");
+        Image image = Toolkit.getDefaultToolkit().getImage("images\\icon.png");
         jFrame.setSize(400,100);
         jFrame.setLocationRelativeTo(null);
         label.setBounds(20,20,250,30);
