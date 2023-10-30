@@ -25,7 +25,6 @@ public class WelcomeWindow extends JFrame {
     class ButtonEventListener implements ActionListener {
         // Button click
         public void actionPerformed(ActionEvent e){
-
             jFrame.setVisible(false);
         }
     }
