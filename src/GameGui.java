@@ -1,68 +1,41 @@
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
-public class GameGui extends JFrame  {
-    static JFrame jFrame = getFrame();
-    static JPanel jPanel = new JPanel();
-    static JLabel computerCity = new JLabel();
-    public String str = "Відповідь ПК";
+public class GameGui extends JFrame {
+    private JFrame jFrame = new JFrame("гра Міста");
+    private JLabel computerCity = new JLabel();
 
-    public void setStr(String str) {
-        this.str = str;
-    }
+    public GameGui() throws Exception{
+        Image image = Toolkit.getDefaultToolkit().getImage("images\\icon.png");
+        jFrame.setSize(500,170);
+        jFrame.setLocationRelativeTo(null);
+        jFrame.setIconImage(image);
+        jFrame.setLayout(null);
 
-    public GameGui(){
+        JLabel jLabel = new JLabel("Твій варіант:");
+        jLabel.setBounds(20,30,100,30);
+        jFrame.add(jLabel);
 
-        GridBagConstraints const1 = new GridBagConstraints();
-        const1.gridx = 0;
-        const1.gridy = 2;
-        const1.gridheight = 1;
-        const1.gridwidth = 1;
-        jPanel.add(new JLabel("Твій варіант:"), const1);
-
-        GridBagConstraints const2 = new GridBagConstraints();
-        const2.gridx = 2;
-        const2.gridy = 2;
-        const2.gridheight = 2;
-        const2.gridwidth = 1;
-//        JTextArea jTextArea = new JTextArea(1,20);
-        //      jPanel.add(jTextArea, const2);
         JTextField jTextField = new JTextField();
-        jPanel.add(jTextField, const2);
+        jTextField.setBounds(100,30,200,30);
+        jFrame.add(jTextField);
 
-        GridBagConstraints const3 = new GridBagConstraints();
-        const3.gridx = 3;
-        const3.gridy = 2;
-        const3.gridheight = 1;
-        const3.gridwidth = 1;
         JButton jButton = new JButton("Моя відповідь");
-        jPanel.add(jButton, const3);
+        jButton.setBounds(300,30,120,30);
+        jFrame.add(jButton);
         jButton.addActionListener(new ButtonAction(jTextField, computerCity));
 
-        GridBagConstraints const4 = new GridBagConstraints();
-        const4.gridx = 1;
-        const4.gridy = 1;
-        const4.gridheight = 1;
-        const4.gridwidth = 1;
-        jPanel.add(new JLabel("   "), const4);
-
-        GridBagConstraints const5 = new GridBagConstraints();
-        const5.gridx = 1;
-        const5.gridy = 0;
-        const5.gridheight = 1;
-        const5.gridwidth =2;
-        //JLabel computerCity = new JLabel(str);
+        computerCity.setBounds(120,20,300,150);
         computerCity.setFont(new Font("Verdana", Font.PLAIN, 18));
-        jPanel.add(computerCity, const5);
+        jFrame.add(computerCity);
 
-        jPanel.revalidate();
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        jFrame.setVisible(true);
+        jFrame.revalidate();
     }
 
-    public static JFrame getFrame(){
-        JFrame frame = new JFrame("гра Міста");
-        frame.setVisible(true);
-        frame.setBounds(250,250,500,200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        return frame;
-    }
+//    public static void main(String[] args) throws Exception {
+//         new GameGui();
+//    }
 }
