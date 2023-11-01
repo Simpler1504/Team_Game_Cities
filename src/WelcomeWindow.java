@@ -25,7 +25,7 @@ public class WelcomeWindow extends JFrame {
 
     class ButtonEventListener implements ActionListener {
         // Button click
-        ppublic void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {
             jFrame.setVisible(false);
             try {
                 GameGui gameGui = new GameGui();
