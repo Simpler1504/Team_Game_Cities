@@ -27,6 +27,15 @@ public class WelcomeWindow extends JFrame {
         // Button click
         public void actionPerformed(ActionEvent e){
             jFrame.setVisible(false);
+            try {
+                GameGui gameGui = new GameGui();
+                CheckWord checkWord = new CheckWord();
+                ButtonAction buttonAction = new ButtonAction(new JTextField(),new JLabel());
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 }
